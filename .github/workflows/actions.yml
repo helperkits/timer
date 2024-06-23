@@ -29,7 +29,8 @@ jobs:
         working-directory: .
 
       - name: Bump package version
-        run: npm start
+        run: npx @helperkits/bumper bump
+        working-directory: .
 
       - name: Build package
         run: npm run build
