@@ -9,15 +9,17 @@ class TIMETRACKER {
 		this.startTime = Date.now();
 	}
 
-	get() {
+	//
+
+	get(reset = false) {
 		//
 
 		const elapsedTime = Date.now() - this.startTime;
 
-		const milliseconds = elapsedTime % 1000;
-		const seconds = Math.floor(elapsedTime / 1000) % 60;
-		const minutes = Math.floor(elapsedTime / (1000 * 60)) % 60;
 		const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+		const minutes = Math.floor(elapsedTime / (1000 * 60)) % 60;
+		const seconds = Math.floor(elapsedTime / 1000) % 60;
+		const milliseconds = elapsedTime % 1000;
 
 		let string = '';
 
@@ -26,9 +28,17 @@ class TIMETRACKER {
 		if (seconds > 0) string += `${seconds}s `;
 		if (milliseconds > 0) string += `${milliseconds}ms`;
 
+		if (reset) this.reset();
+
 		return string;
 
 		//
+	}
+
+	//
+
+	reset() {
+		this.startTime = Date.now();
 	}
 
 	//

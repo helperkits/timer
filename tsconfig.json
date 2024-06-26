@@ -9,7 +9,7 @@
     "outDir": "dist",
     "sourceMap": true,
     "esModuleInterop": true,
-    "declaration": false
+    "declaration": true
   },
   "exclude": ["**/node_modules", "**/.*/", "**/dist/"]
 }
