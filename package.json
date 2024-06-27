@@ -1,21 +1,16 @@
 {
 	"name": "@helperkits/timer",
 	"version": "1.0.0",
-	"main": "./dist/index.js",
 	"type": "module",
+	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist/"
-	],
+	"files": ["dist/"],
 	"scripts": {
 		"start": "tsc && resolve-tspaths && node dist/index.js",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"build": "tsc && resolve-tspaths",
 		"watch": "tsc -w"
-	},
-	"bin": {
-		"bump": "./dist/index.js"
 	},
 	"publishConfig": {
 		"access": "public"
